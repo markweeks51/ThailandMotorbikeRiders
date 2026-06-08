@@ -1,16 +1,15 @@
 (function () {
-  var path = window.location.pathname;
+  var path    = window.location.pathname;
   var section = path.replace(/^\//, '').split('/')[0];
 
   var nav = [
     {
-      id: 'renting-a-bike',
-      label: 'Renting a Bike',
+      id: 'renting-a-bike', label: 'Renting a Bike',
       items: [
         { group: 'Rental Shops' },
-        { label: 'North Thailand',       href: '/renting-a-bike/rental-shops-north' },
-        { label: 'Bangkok & Central',    href: '/renting-a-bike/rental-shops-central' },
-        { label: 'South Thailand',       href: '/renting-a-bike/rental-shops-south' },
+        { label: 'North Thailand',              href: '/renting-a-bike/rental-shops-north' },
+        { label: 'Bangkok & Central',           href: '/renting-a-bike/rental-shops-central' },
+        { label: 'South Thailand',              href: '/renting-a-bike/rental-shops-south' },
         { divider: true },
         { group: 'Choosing & Learning' },
         { label: 'Choosing the Right Bike',     href: '/renting-a-bike/choosing-the-right-bike' },
@@ -26,8 +25,7 @@
       ]
     },
     {
-      id: 'routes',
-      label: 'Routes & Destinations',
+      id: 'routes', label: 'Routes & Destinations',
       items: [
         { label: 'Mae Hong Son Loop',                   href: '/routes/mae-hong-son-loop' },
         { label: 'Nan Loop',                            href: '/routes/nan-loop' },
@@ -39,19 +37,17 @@
       ]
     },
     {
-      id: 'weather',
-      label: 'Weather by Region',
+      id: 'weather', label: 'Weather by Region',
       items: [
-        { label: 'Northern Thailand',               href: '/weather/north' },
-        { label: 'Northeast Thailand — Isan',       href: '/weather/northeast' },
-        { label: 'Central Thailand',                href: '/weather/central' },
-        { label: 'West Coast — Phuket & Krabi',     href: '/weather/west-coast' },
-        { label: 'Gulf Coast — Koh Samui & Koh Chang', href: '/weather/gulf-coast' }
+        { label: 'Northern Thailand',                       href: '/weather/north' },
+        { label: 'Northeast Thailand — Isan',               href: '/weather/northeast' },
+        { label: 'Central Thailand',                        href: '/weather/central' },
+        { label: 'West Coast — Phuket & Krabi',             href: '/weather/west-coast' },
+        { label: 'Gulf Coast — Koh Samui & Koh Chang',      href: '/weather/gulf-coast' }
       ]
     },
     {
-      id: 'safety-and-laws',
-      label: 'Safety & Laws',
+      id: 'safety-and-laws', label: 'Safety & Laws',
       items: [
         { label: 'Thai Traffic Laws',           href: '/safety-and-laws/thai-traffic-laws' },
         { label: 'Licensing Requirements',      href: '/safety-and-laws/licensing-requirements' },
@@ -62,8 +58,7 @@
       ]
     },
     {
-      id: 'bikes-and-gear',
-      label: 'Bikes & Gear',
+      id: 'bikes-and-gear', label: 'Bikes & Gear',
       items: [
         { label: 'Popular Bikes in Thailand',       href: '/bikes-and-gear/popular-bikes-in-thailand' },
         { label: 'Gear for the Thai Climate',       href: '/bikes-and-gear/gear-for-the-thai-climate' },
@@ -72,8 +67,7 @@
       ]
     },
     {
-      id: 'community-and-culture',
-      label: 'Community & Culture',
+      id: 'community-and-culture', label: 'Community & Culture',
       items: [
         { label: 'Riding Clubs & Group Rides',  href: '/community-and-culture/riding-clubs-group-rides' },
         { label: 'Events & Festivals',          href: '/community-and-culture/events-and-festivals' },
@@ -82,64 +76,106 @@
     }
   ];
 
-  /* ── Desktop dropdown nav ───────────────────────────────────── */
+  /* ── Inject a <style> block so dropdown works independent of Tailwind build ── */
+  var style = document.createElement('style');
+  style.textContent = [
+    '#desktop-nav { display:flex; align-items:center; gap:4px; }',
+    '.tmr-nav-item { position:relative; }',
+    '.tmr-nav-link { display:flex; align-items:center; gap:4px; padding:6px 10px; font-size:14px; font-weight:500; color:#2C2C2C; text-decoration:none; border-radius:4px; white-space:nowrap; transition:color .15s; }',
+    '.tmr-nav-link:hover { color:#2D5016; }',
+    '.tmr-nav-link.active { color:#2D5016; font-weight:700; border-bottom:2px solid #2D5016; border-radius:0; }',
+    '.tmr-nav-link svg { width:12px; height:12px; opacity:.5; }',
+    '.tmr-dropdown { display:none; position:absolute; top:100%; left:0; margin-top:6px; background:#fff; border:1px solid #e5e7eb; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,.12); min-width:230px; padding:6px 0; z-index:200; }',
+    '.tmr-dropdown.open { display:block; }',
+    '.tmr-dropdown a { display:block; padding:9px 16px; font-size:13px; color:#2C2C2C; text-decoration:none; white-space:nowrap; transition:background .1s,color .1s; }',
+    '.tmr-dropdown a:hover { background:#EDEDEA; color:#2D5016; }',
+    '.tmr-dropdown hr { margin:4px 0; border:none; border-top:1px solid #f0f0f0; }',
+    '.tmr-dropdown .tmr-group-label { padding:8px 16px 3px; font-size:10px; font-weight:700; color:#9ca3af; text-transform:uppercase; letter-spacing:.08em; }'
+  ].join('\n');
+  document.head.appendChild(style);
+
+  /* ── Build desktop nav ── */
   var desktopEl = document.getElementById('desktop-nav');
   if (desktopEl) {
-    var dHtml = '';
+    desktopEl.innerHTML = '';
     nav.forEach(function (s) {
-      var active = section === s.id;
-      var linkCls = active
-        ? 'text-[#2D5016] font-semibold text-sm border-b-2 border-[#2D5016]'
-        : 'text-[#2C2C2C] hover:text-[#2D5016] font-medium text-sm transition-colors';
+      /* wrapper */
+      var wrap = document.createElement('div');
+      wrap.className = 'tmr-nav-item';
 
-      var dropItems = '';
-      s.items.forEach(function (i) {
-        if (i.divider) {
-          dropItems += '<hr class="my-1 border-gray-100">';
-        } else if (i.group) {
-          dropItems += '<p class="px-4 pt-3 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">' + i.group + '</p>';
+      /* top-level link */
+      var link = document.createElement('a');
+      link.href = '/' + s.id;
+      link.className = 'tmr-nav-link' + (section === s.id ? ' active' : '');
+      link.innerHTML = s.label +
+        '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>';
+
+      /* dropdown panel */
+      var drop = document.createElement('div');
+      drop.className = 'tmr-dropdown';
+
+      s.items.forEach(function (item) {
+        if (item.divider) {
+          drop.appendChild(document.createElement('hr'));
+        } else if (item.group) {
+          var g = document.createElement('div');
+          g.className = 'tmr-group-label';
+          g.textContent = item.group;
+          drop.appendChild(g);
         } else {
-          dropItems += '<a href="' + i.href + '" class="block px-4 py-2 text-sm text-[#2C2C2C] hover:bg-[#EDEDEA] hover:text-[#2D5016] transition-colors">' + i.label + '</a>';
+          var a = document.createElement('a');
+          a.href  = item.href;
+          a.textContent = item.label;
+          drop.appendChild(a);
         }
       });
 
-      dHtml +=
-        '<div class="relative group">' +
-          '<a href="/' + s.id + '" class="flex items-center gap-1 ' + linkCls + '">' +
-            s.label +
-            '<svg class="w-3 h-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>' +
-            '</svg>' +
-          '</a>' +
-          '<div class="nav-dropdown">' +
-            dropItems +
-          '</div>' +
-        '</div>';
+      wrap.appendChild(link);
+      wrap.appendChild(drop);
+      desktopEl.appendChild(wrap);
+
+      /* hover logic */
+      var timer;
+      wrap.addEventListener('mouseenter', function () {
+        clearTimeout(timer);
+        drop.classList.add('open');
+      });
+      wrap.addEventListener('mouseleave', function () {
+        timer = setTimeout(function () { drop.classList.remove('open'); }, 120);
+      });
     });
-    desktopEl.innerHTML = dHtml;
   }
 
-  /* ── Mobile nav ─────────────────────────────────────────────── */
+  /* ── Build mobile nav ── */
   var mobileEl = document.getElementById('mobile-nav');
   if (mobileEl) {
-    var mHtml = '';
+    mobileEl.innerHTML = '';
     nav.forEach(function (s) {
-      var active = section === s.id;
-      var linkCls = active ? 'text-[#2D5016] font-semibold' : 'text-[#2C2C2C] font-medium';
+      var section_wrap = document.createElement('div');
+      section_wrap.style.cssText = 'border-bottom:1px solid #f3f4f6;';
 
-      var subItems = '';
-      s.items.forEach(function (i) {
-        if (!i.divider && !i.group) {
-          subItems += '<a href="' + i.href + '" class="block py-1.5 text-sm text-[#2C2C2C]/70 hover:text-[#2D5016] transition-colors">' + i.label + '</a>';
+      var topLink = document.createElement('a');
+      topLink.href = '/' + s.id;
+      topLink.style.cssText = 'display:block;padding:10px 0;font-weight:' + (section === s.id ? '700' : '500') + ';color:' + (section === s.id ? '#2D5016' : '#2C2C2C') + ';text-decoration:none;';
+      topLink.textContent = s.label;
+
+      var subWrap = document.createElement('div');
+      subWrap.style.cssText = 'padding-left:12px;padding-bottom:8px;';
+
+      s.items.forEach(function (item) {
+        if (!item.divider && !item.group) {
+          var a = document.createElement('a');
+          a.href = item.href;
+          a.style.cssText = 'display:block;padding:5px 0;font-size:13px;color:#555;text-decoration:none;';
+          a.textContent = item.label;
+          subWrap.appendChild(a);
         }
       });
 
-      mHtml +=
-        '<div class="border-b border-gray-100 last:border-0">' +
-          '<a href="/' + s.id + '" class="' + linkCls + ' block py-2">' + s.label + '</a>' +
-          '<div class="pl-3 pb-2 flex flex-col">' + subItems + '</div>' +
-        '</div>';
+      section_wrap.appendChild(topLink);
+      section_wrap.appendChild(subWrap);
+      mobileEl.appendChild(section_wrap);
     });
-    mobileEl.innerHTML = mHtml;
   }
+
 })();

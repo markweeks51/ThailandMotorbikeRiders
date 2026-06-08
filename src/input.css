@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #F8F6F1;
+    color: #2C2C2C;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Barlow Condensed", sans-serif;
+  }
+}
+
+@layer components {
+  .warning-callout {
+    @apply border-l-4 border-[#C0392B] bg-red-50 text-[#C0392B] p-5 my-8 rounded-r-lg;
+  }
+  .info-callout {
+    @apply border-l-4 border-[#2D5016] bg-green-50 text-[#2D5016] p-5 my-8 rounded-r-lg;
+  }
+  .btn-amber {
+    @apply inline-block bg-[#E8820C] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#c97009] transition-colors duration-200;
+  }
+  .btn-forest {
+    @apply inline-block bg-[#2D5016] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#1e3610] transition-colors duration-200;
+  }
+  .section-card {
+    @apply bg-[#EDEDEA] rounded-xl p-6 hover:shadow-lg transition-shadow duration-200;
+  }
+  .ad-content-banner {
+    @apply w-full flex items-center justify-center bg-[#EDEDEA] border border-dashed border-gray-300 text-gray-400 text-xs rounded my-10;
+    min-height: 90px;
+  }
+  .ad-footer-banner {
+    @apply w-full flex items-center justify-center bg-[#EDEDEA] border-y border-dashed border-gray-300 text-gray-400 text-xs;
+    min-height: 90px;
+  }
+  .prose-tmr h2 {
+    @apply font-heading font-bold text-2xl text-[#2D5016] mt-10 mb-4;
+  }
+  .prose-tmr h3 {
+    @apply font-heading font-semibold text-xl text-[#2C2C2C] mt-6 mb-3;
+  }
+  .prose-tmr p {
+    @apply text-base leading-relaxed mb-4;
+  }
+  .prose-tmr ul {
+    @apply list-disc list-inside space-y-2 mb-6 text-base leading-relaxed;
+  }
+  .prose-tmr table {
+    @apply w-full border-collapse mb-6 text-sm;
+  }
+  .prose-tmr th {
+    @apply bg-[#2D5016] text-white font-semibold px-4 py-2 text-left;
+  }
+  .prose-tmr td {
+    @apply border border-gray-200 px-4 py-2;
+  }
+  .prose-tmr tr:nth-child(even) td {
+    @apply bg-[#EDEDEA];
+  }
+  .prose-tmr a {
+    @apply text-[#E8820C] hover:underline;
+  }
+}

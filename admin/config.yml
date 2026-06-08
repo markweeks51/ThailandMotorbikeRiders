@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta Title", name: "meta_title", widget: "string" }
+      - { label: "Meta Description", name: "meta_description", widget: "string" }
+      - { label: "Body Content", name: "body", widget: "markdown" }
+
+  - name: "rental_shops"
+    label: "Rental Shops"
+    folder: "_rental-shops"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Shop Name", name: "title", widget: "string" }
+      - label: "Region"
+        name: "region"
+        widget: "select"
+        options: ["North", "Central / Bangkok", "South"]
+      - { label: "Specialty", name: "specialty", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Website URL", name: "website", widget: "string", required: false }
+      - { label: "Address", name: "address", widget: "string", required: false }
+
+  - name: "routes"
+    label: "Routes"
+    folder: "_routes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Route Name", name: "title", widget: "string" }
+      - { label: "Distance", name: "distance", widget: "string" }
+      - { label: "Duration", name: "duration", widget: "string" }
+      - label: "Difficulty"
+        name: "difficulty"
+        widget: "select"
+        options: ["Easy", "Easy to Moderate", "Moderate", "Moderate to Challenging", "Challenging"]
+      - { label: "Description", name: "description", widget: "markdown" }

@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.thailandmotorbikeriders.org/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
 
+  <!-- Thai Driver's License -->
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/do-i-need-a-thai-license</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/eligibility-and-requirements</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/required-documents</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/application-process</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/theory-test</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/practical-test</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/renewing-your-license</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/international-driving-permit</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/license-assistance-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.thailandmotorbikeriders.org/thai-drivers-license/theory-test-practice</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- Renting a Bike -->
   <url><loc>https://www.thailandmotorbikeriders.org/renting-a-bike</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/renting-a-bike/rental-shops-north</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -16,7 +29,7 @@
   <url><loc>https://www.thailandmotorbikeriders.org/renting-a-bike/what-happens-if-i-crash</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/renting-a-bike/rental-bike-across-borders</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Routes & Destinations -->
+  <!-- Tour Routes -->
   <url><loc>https://www.thailandmotorbikeriders.org/routes</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/routes/mae-hong-son-loop</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/routes/nan-loop</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -43,14 +56,14 @@
   <url><loc>https://www.thailandmotorbikeriders.org/safety-and-laws/insurance-options</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/safety-and-laws/emergency-contacts</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Bikes & Gear -->
+  <!-- Buying a Bike & Gear -->
   <url><loc>https://www.thailandmotorbikeriders.org/bikes-and-gear</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/bikes-and-gear/popular-bikes-in-thailand</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/bikes-and-gear/gear-for-the-thai-climate</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/bikes-and-gear/where-to-buy-gear</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/bikes-and-gear/common-repairs-breakdowns</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Community & Culture -->
+  <!-- Bike Events & Culture -->
   <url><loc>https://www.thailandmotorbikeriders.org/community-and-culture</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/community-and-culture/riding-clubs-group-rides</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.thailandmotorbikeriders.org/community-and-culture/events-and-festivals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

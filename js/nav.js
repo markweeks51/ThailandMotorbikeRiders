@@ -113,10 +113,17 @@
   document.head.appendChild(style);
 
   /* ── Replace text logo with image ── */
-  var logoLink = document.querySelector('header a[href="/"]');
-  if (logoLink) {
-    logoLink.innerHTML = '<img src="/images/logo.webp" alt="Thailand Motorbike Riders" style="height:44px;width:auto;display:block;">';
-    logoLink.style.cssText = 'display:block;line-height:0;';
+  function replaceLogo() {
+    var logoLink = document.querySelector('header a[href="/"]');
+    if (logoLink) {
+      logoLink.innerHTML = '<img src="/images/logo.webp" alt="Thailand Motorbike Riders" style="height:44px;width:auto;display:block;">';
+      logoLink.style.cssText = 'display:block;line-height:0;';
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', replaceLogo);
+  } else {
+    replaceLogo();
   }
 
   /* ── Build desktop nav ── */

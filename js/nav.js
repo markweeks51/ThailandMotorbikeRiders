@@ -4,6 +4,24 @@
 
   var nav = [
     {
+      id: 'thai-drivers-license', label: "Thai Driver's License",
+      items: [
+        { label: 'Do I Need a Thai License?',       href: '/thai-drivers-license/do-i-need-a-thai-license' },
+        { label: 'Eligibility & Requirements',      href: '/thai-drivers-license/eligibility-and-requirements' },
+        { label: 'Required Documents',              href: '/thai-drivers-license/required-documents' },
+        { label: 'The Application Process',         href: '/thai-drivers-license/application-process' },
+        { divider: true },
+        { group: 'The Tests' },
+        { label: 'The Theory Test',                 href: '/thai-drivers-license/theory-test' },
+        { label: 'The Practical Driving Test',      href: '/thai-drivers-license/practical-test' },
+        { label: 'Theory Test Practice',            href: '/thai-drivers-license/theory-test-practice' },
+        { divider: true },
+        { label: 'Renewing Your License',           href: '/thai-drivers-license/renewing-your-license' },
+        { label: 'International Driving Permit',    href: '/thai-drivers-license/international-driving-permit' },
+        { label: 'License Assistance Services',     href: '/thai-drivers-license/license-assistance-services' }
+      ]
+    },
+    {
       id: 'renting-a-bike', label: 'Renting a Bike',
       items: [
         { group: 'Rental Shops' },
@@ -25,15 +43,32 @@
       ]
     },
     {
-      id: 'routes', label: 'Routes & Destinations',
+      id: 'bikes-and-gear', label: 'Buying a Bike & Gear',
       items: [
-        { label: 'Mae Hong Son Loop',                   href: '/routes/mae-hong-son-loop' },
-        { label: 'Nan Loop',                            href: '/routes/nan-loop' },
-        { label: 'Golden Triangle Loop',                href: '/routes/golden-triangle-loop' },
-        { label: 'The Beach Run',                       href: '/routes/the-beach-run' },
-        { label: 'River Kwai Route',                    href: '/routes/river-kwai-route' },
-        { label: 'East Coast — Bangkok to Koh Chang',   href: '/routes/east-coast-bangkok-pattaya-koh-chang' },
-        { label: 'Gulf Coast Run',                      href: '/routes/gulf-coast-run' }
+        { label: 'Popular Bikes in Thailand',       href: '/bikes-and-gear/popular-bikes-in-thailand' },
+        { label: 'Gear for the Thai Climate',       href: '/bikes-and-gear/gear-for-the-thai-climate' },
+        { label: 'Where to Buy Gear',               href: '/bikes-and-gear/where-to-buy-gear' },
+        { label: 'Common Repairs & Breakdowns',     href: '/bikes-and-gear/common-repairs-breakdowns' }
+      ]
+    },
+    {
+      id: 'community-and-culture', label: 'Bike Events & Culture',
+      items: [
+        { label: 'Riding Clubs & Group Rides',  href: '/community-and-culture/riding-clubs-group-rides' },
+        { label: 'Events & Festivals',          href: '/community-and-culture/events-and-festivals' },
+        { label: 'Road Etiquette',              href: '/community-and-culture/road-etiquette' }
+      ]
+    },
+    {
+      id: 'routes', label: 'Tour Routes',
+      items: [
+        { label: 'The Mae Hong Son Loop — Thailand\'s Greatest Motorbike Route',  href: '/routes/mae-hong-son-loop' },
+        { label: 'The Nan Loop — Northern Thailand\'s Hidden Riding Route',       href: '/routes/nan-loop' },
+        { label: 'The Golden Triangle Loop — Riding to the Top of Thailand',      href: '/routes/golden-triangle-loop' },
+        { label: 'The Beach Run — Phuket, Krabi & Koh Samui',                    href: '/routes/the-beach-run' },
+        { label: 'River Kwai Route — Bangkok & Kanchanaburi',                    href: '/routes/river-kwai-route' },
+        { label: 'East Coast Ride — Bangkok, Pattaya & Koh Chang',               href: '/routes/east-coast-bangkok-pattaya-koh-chang' },
+        { label: 'The Gulf Coast Run — Bangkok to Hua Hin',                      href: '/routes/gulf-coast-run' }
       ]
     },
     {
@@ -55,23 +90,6 @@
         { label: 'What to Do in an Accident',   href: '/safety-and-laws/what-to-do-in-an-accident' },
         { label: 'Insurance Options',           href: '/safety-and-laws/insurance-options' },
         { label: 'Emergency Contacts',          href: '/safety-and-laws/emergency-contacts' }
-      ]
-    },
-    {
-      id: 'bikes-and-gear', label: 'Bikes & Gear',
-      items: [
-        { label: 'Popular Bikes in Thailand',       href: '/bikes-and-gear/popular-bikes-in-thailand' },
-        { label: 'Gear for the Thai Climate',       href: '/bikes-and-gear/gear-for-the-thai-climate' },
-        { label: 'Where to Buy Gear',               href: '/bikes-and-gear/where-to-buy-gear' },
-        { label: 'Common Repairs & Breakdowns',     href: '/bikes-and-gear/common-repairs-breakdowns' }
-      ]
-    },
-    {
-      id: 'community-and-culture', label: 'Community & Culture',
-      items: [
-        { label: 'Riding Clubs & Group Rides',  href: '/community-and-culture/riding-clubs-group-rides' },
-        { label: 'Events & Festivals',          href: '/community-and-culture/events-and-festivals' },
-        { label: 'Road Etiquette',              href: '/community-and-culture/road-etiquette' }
       ]
     }
   ];

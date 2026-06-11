@@ -112,6 +112,13 @@
   ].join('\n');
   document.head.appendChild(style);
 
+  /* ── Replace text logo with image ── */
+  var logoLink = document.querySelector('header a[href="/"]');
+  if (logoLink) {
+    logoLink.innerHTML = '<img src="/images/logo.webp" alt="Thailand Motorbike Riders" style="height:44px;width:auto;display:block;">';
+    logoLink.style.cssText = 'display:block;line-height:0;';
+  }
+
   /* ── Build desktop nav ── */
   var desktopEl = document.getElementById('desktop-nav');
   if (desktopEl) {
